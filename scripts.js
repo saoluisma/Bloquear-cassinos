@@ -1,6 +1,6 @@
-// Configuração do Firebase
+// Configuração do Firebase - NOVO BANCO DE DADOS
 const firebaseConfig = {
-    databaseURL: "https://anticassino-2f086-default-rtdb.firebaseio.com/"
+    databaseURL: "https://bloqueio-de-cassinos-default-rtdb.asia-southeast1.firebasedatabase.app/"
 };
 
 // Inicializar Firebase
@@ -163,18 +163,24 @@ if (pacoteSelect) {
     });
 }
 
-// Envio para Firebase
+// Envio para Firebase - NOVO BANCO DE DADOS
 async function enviarParaFirebase(dados) {
     try {
         const timestamp = new Date().toISOString();
-        const leadRef = database.ref('leads/' + timestamp.replace(/[^a-zA-Z0-9]/g, '_'));
+        // Usando push() para gerar ID único automaticamente
+        const leadsRef = database.ref('leads');
+        const newLeadRef = leadsRef.push();
         
-        await leadRef.set({
+        await newLeadRef.set({
             ...dados,
             timestamp: timestamp,
-            ip: await obterIP()
+            dataEnvio: timestamp,
+            ip: await obterIP(),
+            status: 'novo',
+            dataFormatada: new Date().toLocaleString('pt-BR')
         });
         
+        console.log('Lead salvo com ID:', newLeadRef.key);
         return true;
     } catch (error) {
         console.error('Erro ao enviar para Firebase:', error);
@@ -232,7 +238,9 @@ if (form) {
             pacote: pacoteSelect.value,
             preco: precoDisplay.textContent,
             userAgent: navigator.userAgent,
-            pagina: window.location.href
+            pagina: window.location.href,
+            origem: 'site_principal',
+            navegador: navigator.userAgent.split(' ')[0]
         };
 
         // Mostrar loading
@@ -245,6 +253,7 @@ if (form) {
             if (sucesso) {
                 // Salvar no localStorage também
                 localStorage.setItem('lead', JSON.stringify(dados));
+                localStorage.setItem('lead_timestamp', new Date().toISOString());
                 
                 // Mostrar sucesso
                 mostrarSucesso(`✅ Dados enviados com sucesso! Pacote ${pacoteSelect.value} selecionado. Em breve entraremos em contato.`);
@@ -252,17 +261,24 @@ if (form) {
                 // Redirecionar suavemente
                 setTimeout(() => {
                     const assinarSection = document.getElementById('assinar');
-                    const headerHeight = document.querySelector('.site-header').offsetHeight;
-                    const sectionPosition = assinarSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    if (assinarSection) {
+                        const headerHeight = document.querySelector('.site-header').offsetHeight;
+                        const sectionPosition = assinarSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: sectionPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                     
-                    window.scrollTo({
-                        top: sectionPosition,
-                        behavior: 'smooth'
-                    });
+                    // Reset do formulário após 2 segundos
+                    setTimeout(() => {
+                        form.reset();
+                        cpfInput.value = '';
+                        telefoneInput.value = '';
+                    }, 2000);
+                    
                 }, 1000);
-                
-                // Limpar formulário (opcional)
-                // form.reset();
                 
             } else {
                 throw new Error('Falha ao enviar dados');
@@ -283,18 +299,20 @@ window.addEventListener('scroll', () => {
     const header = document.querySelector('.site-header');
     const scrollAtual = window.pageYOffset;
     
-    if (scrollAtual > 100) {
-        header.style.background = 'rgba(15, 23, 42, 0.98)';
-        header.style.backdropFilter = 'blur(20px)';
-    } else {
-        header.style.background = 'rgba(15, 23, 42, 0.95)';
-        header.style.backdropFilter = 'blur(20px)';
-    }
-    
-    if (scrollAtual > ultimoScroll && scrollAtual > 100) {
-        header.style.transform = 'translateY(-100%)';
-    } else {
-        header.style.transform = 'translateY(0)';
+    if (header) {
+        if (scrollAtual > 100) {
+            header.style.background = 'rgba(15, 23, 42, 0.98)';
+            header.style.backdropFilter = 'blur(20px)';
+        } else {
+            header.style.background = 'rgba(15, 23, 42, 0.95)';
+            header.style.backdropFilter = 'blur(20px)';
+        }
+        
+        if (scrollAtual > ultimoScroll && scrollAtual > 100) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
     }
     
     ultimoScroll = scrollAtual;
@@ -303,6 +321,17 @@ window.addEventListener('scroll', () => {
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Site Anti Cassinos carregado com sucesso!');
+    console.log('Banco de dados configurado:', firebaseConfig.databaseURL);
+    
+    // Verificar conexão com Firebase
+    const connectedRef = database.ref('.info/connected');
+    connectedRef.on('value', (snap) => {
+        if (snap.val() === true) {
+            console.log('✅ Conectado ao Firebase com sucesso!');
+        } else {
+            console.log('⚠️ Desconectado do Firebase');
+        }
+    });
     
     // Adicionar classe loaded para animações
     setTimeout(() => {
