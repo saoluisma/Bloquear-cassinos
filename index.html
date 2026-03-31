@@ -32,7 +32,7 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
         }
 
         /* Header */
@@ -41,7 +41,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(15, 23, 42, 0.98);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255,255,255,0.08);
             z-index: 1000;
@@ -52,46 +52,64 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 70px;
+            height: 64px;
+            gap: 8px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            text-decoration: none;
         }
 
+        /* Logo area com imagem personalizada */
         .brand .logo {
-            width: 28px;
-            height: 28px;
-            background: #22c55e;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: transparent;
+        }
+        
+        .brand .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             border-radius: 8px;
-            display: inline-block;
         }
 
         .brand-name {
             background: linear-gradient(135deg, #f1f5f9, #bbf7d0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
         }
 
         .nav {
             display: flex;
             gap: 4px;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         .nav a {
             color: #f1f5f9;
             text-decoration: none;
-            padding: 6px 12px;
+            padding: 6px 10px;
             border-radius: 8px;
             font-weight: 500;
             transition: 0.2s;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
         .nav a:not(.btn):hover {
@@ -117,6 +135,7 @@
 
         .btn-primary {
             background: #22c55e;
+            color: #0a1f12;
         }
 
         .btn-primary:hover {
@@ -125,14 +144,15 @@
         }
 
         .btn-outline {
-            background: transparent;
-            border: 2px solid rgba(255,255,255,0.2);
-            color: #f1f5f9;
+            background: rgba(34, 197, 94, 0.2);
+            border: 2px solid #22c55e;
+            color: #22c55e;
         }
 
         .btn-outline:hover {
+            background: #22c55e;
+            color: #0a1f12;
             border-color: #22c55e;
-            color: #22c55e;
         }
 
         .btn-block {
@@ -140,19 +160,19 @@
         }
 
         .btn.small {
-            padding: 8px 16px;
-            font-size: 0.8rem;
+            padding: 6px 12px;
+            font-size: 0.7rem;
         }
 
-        /* Hero - VERSÃO MOBILE OTIMIZADA */
+        /* Hero - MOBILE TOTALMENTE AJUSTADO */
         .hero {
-            padding: 90px 0 50px;
+            padding: 80px 0 40px;
         }
 
         .hero-inner {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 28px;
         }
 
         .hero-copy {
@@ -160,33 +180,34 @@
         }
 
         .hero h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             line-height: 1.3;
             background: linear-gradient(135deg, #fff, #bbf7d0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
+            word-break: break-word;
         }
 
         .hero p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #94a3b8;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .bullets {
             list-style: none;
-            margin: 20px 0;
+            margin: 16px 0;
             text-align: left;
             display: inline-block;
         }
 
         .bullets li {
-            margin-bottom: 10px;
-            padding-left: 28px;
+            margin-bottom: 8px;
+            padding-left: 24px;
             position: relative;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .bullets li::before {
@@ -198,16 +219,16 @@
         }
 
         .support-note {
-            margin-top: 16px;
-            font-size: 0.85rem;
+            margin-top: 12px;
+            font-size: 0.8rem;
         }
 
-        /* Card Form */
+        /* Card Form - melhor espaçamento mobile */
         .card {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
-            padding: 24px;
+            padding: 20px;
             backdrop-filter: blur(10px);
         }
 
@@ -216,14 +237,15 @@
         }
 
         .form-row {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .form-row label {
             display: block;
             font-weight: 600;
             margin-bottom: 6px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            color: #cbd5e1;
         }
 
         input, select {
@@ -233,16 +255,18 @@
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 12px;
             color: white;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             outline: none;
+            transition: all 0.2s;
         }
 
         input:focus, select:focus {
             border-color: #22c55e;
+            background: rgba(255,255,255,0.12);
         }
 
         .price-box {
-            background: rgba(34,197,94,0.1);
+            background: rgba(34,197,94,0.15);
             border-radius: 12px;
             padding: 12px;
             text-align: center;
@@ -250,7 +274,7 @@
         }
 
         .price {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #22c55e;
         }
@@ -272,7 +296,7 @@
             border-radius: 8px;
         }
 
-        /* Pacotes grid */
+        /* Pacotes grid - CORES CORRIGIDAS PARA VISIBILIDADE TOTAL */
         .grid-3 {
             display: grid;
             grid-template-columns: 1fr;
@@ -281,54 +305,74 @@
         }
 
         .package {
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(20, 30, 50, 0.9), rgba(15, 23, 42, 0.95));
+            border-radius: 24px;
             padding: 24px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.2s;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .package:hover {
+            border-color: #22c55e;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(34,197,94,0.15);
         }
 
         .package.featured {
             border: 2px solid #22c55e;
             position: relative;
+            background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(15,23,42,0.95));
+            box-shadow: 0 0 20px rgba(34,197,94,0.2);
         }
 
         .package.featured::before {
-            content: "Mais Popular";
+            content: "⭐ Mais Popular";
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: #22c55e;
-            color: #03130a;
-            padding: 4px 16px;
-            border-radius: 20px;
+            color: #0a1f12;
+            padding: 5px 18px;
+            border-radius: 40px;
             font-size: 0.7rem;
-            font-weight: 700;
+            font-weight: 800;
             white-space: nowrap;
+            letter-spacing: 0.5px;
         }
 
         .price-tag {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #22c55e;
             margin: 16px 0;
+            background: rgba(34,197,94,0.2);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            letter-spacing: -0.5px;
         }
 
         .package h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 8px;
+            color: #ffffff;
+            font-weight: 700;
         }
 
         .package ul {
             list-style: none;
-            margin: 16px 0;
+            margin: 20px 0 24px;
         }
 
         .package li {
-            padding: 6px 0 6px 24px;
+            padding: 8px 0 8px 28px;
             position: relative;
             font-size: 0.85rem;
+            color: #e2e8f0;
+            line-height: 1.4;
         }
 
         .package li::before {
@@ -336,6 +380,33 @@
             position: absolute;
             left: 0;
             color: #22c55e;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* Botões dentro dos pacotes com contraste melhorado */
+        .package .btn-outline {
+            background: rgba(34, 197, 94, 0.2);
+            border: 2px solid #22c55e;
+            color: #22c55e;
+            font-weight: 700;
+        }
+        
+        .package .btn-outline:hover {
+            background: #22c55e;
+            color: #0a1f12;
+        }
+        
+        .package .btn-primary {
+            background: #22c55e;
+            color: #0a1f12;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(34,197,94,0.3);
+        }
+        
+        .package .btn-primary:hover {
+            background: #16a34a;
+            transform: scale(1.02);
         }
 
         .section {
@@ -344,8 +415,9 @@
 
         .section h2 {
             text-align: center;
-            font-size: 1.6rem;
-            margin-bottom: 30px;
+            font-size: 1.5rem;
+            margin-bottom: 28px;
+            color: #f1f5f9;
         }
 
         .section.alt {
@@ -363,9 +435,10 @@
 
         .steps li {
             position: relative;
-            padding-left: 60px;
-            margin: 30px 0;
-            font-size: 0.95rem;
+            padding-left: 55px;
+            margin: 28px 0;
+            font-size: 0.9rem;
+            color: #cbd5e1;
         }
 
         .steps li::before {
@@ -374,8 +447,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: #22c55e;
             color: #03130a;
@@ -383,17 +456,83 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .note-box {
             background: rgba(34,197,94,0.1);
             border: 1px solid rgba(34,197,94,0.2);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 30px;
+            border-radius: 16px;
+            padding: 18px;
+            margin-top: 24px;
         }
 
+        /* Depoimentos */
+        .testimonials-section {
+            background: linear-gradient(135deg, rgba(34,197,94,0.05) 0%, rgba(20,30,50,0.5) 100%);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(34,197,94,0.2);
+            transition: transform 0.2s;
+            backdrop-filter: blur(4px);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(34,197,94,0.5);
+        }
+        .testimonial-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+            font-style: italic;
+            margin-bottom: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .testimonial-text::before {
+            content: "“";
+            font-size: 2.5rem;
+            position: absolute;
+            left: -6px;
+            top: -12px;
+            color: #22c55e;
+            opacity: 0.6;
+            font-family: serif;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: #22c55e;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+        .testimonial-location {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .testimonial-location::before {
+            content: "📍";
+            font-size: 0.65rem;
+        }
+        .stars {
+            color: #fbbf24;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        
         /* FAQ */
         .faq-grid {
             display: flex;
@@ -406,17 +545,17 @@
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 16px;
             overflow: hidden;
-            transition: 0.2s;
         }
 
         .faq-item summary {
-            padding: 18px 20px;
+            padding: 16px 18px;
             font-weight: 600;
             cursor: pointer;
             list-style: none;
             position: relative;
-            font-size: 1rem;
+            font-size: 0.9rem;
             padding-right: 40px;
+            color: #f1f5f9;
         }
 
         .faq-item summary::-webkit-details-marker {
@@ -426,10 +565,10 @@
         .faq-item summary::after {
             content: '+';
             position: absolute;
-            right: 20px;
+            right: 18px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 300;
             transition: 0.2s;
             color: #22c55e;
@@ -440,11 +579,11 @@
         }
 
         .faq-item p {
-            padding: 0 20px 20px;
+            padding: 0 18px 18px;
             margin: 0;
             color: #94a3b8;
             line-height: 1.5;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* CTA */
@@ -462,12 +601,12 @@
         }
 
         .cta h2 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-bottom: 8px;
         }
 
         .cta p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #94a3b8;
         }
 
@@ -479,7 +618,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             backdrop-filter: blur(8px);
             z-index: 2000;
             justify-content: center;
@@ -489,11 +628,11 @@
         .modal-content {
             background: #1e293b;
             border-radius: 28px;
-            max-width: 400px;
+            max-width: 380px;
             width: 90%;
-            padding: 24px;
+            padding: 20px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(34,197,94,0.3);
         }
 
         .qr-container {
@@ -509,11 +648,11 @@
             font-family: monospace;
             word-break: break-all;
             margin: 12px 0;
-            font-size: 10px;
+            font-size: 9px;
         }
 
         .timer {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: bold;
             color: #22c55e;
             margin: 12px 0;
@@ -538,55 +677,98 @@
 
         .footer {
             border-top: 1px solid rgba(255,255,255,0.08);
-            padding: 40px 0 30px;
+            padding: 32px 0 24px;
             text-align: center;
         }
 
         /* Tablet e Desktop */
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+        }
+
         @media (min-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
             .hero-inner {
                 flex-direction: row;
-                gap: 50px;
+                gap: 40px;
             }
-            
             .hero-copy {
                 text-align: left;
                 flex: 1;
             }
-            
             .form-card {
                 flex: 1;
             }
-            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
-            
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
-            
             .grid-3 {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 25px;
             }
-            
             .section {
-                padding: 80px 0;
+                padding: 70px 0;
             }
-            
             .section h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (min-width: 1024px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
-            
             .grid-3 {
                 gap: 30px;
+            }
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-inner {
+                height: 58px;
+            }
+            .nav a {
+                padding: 4px 8px;
+                font-size: 0.65rem;
+            }
+            .hero {
+                padding: 72px 0 32px;
+            }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .bullets li {
+                font-size: 0.8rem;
+            }
+            .package h3 {
+                font-size: 1.2rem;
+            }
+            .price-tag {
+                font-size: 1.6rem;
+                padding: 4px 12px;
+            }
+            .form-card {
+                padding: 18px;
+            }
+            .brand .logo {
+                width: 32px;
+                height: 32px;
             }
         }
     </style>
@@ -594,13 +776,17 @@
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <div class="brand">
-                <div class="logo"></div>
+            <a href="#" class="brand" style="text-decoration: none;">
+                <div class="logo">
+                    <!-- Logo personalizada: v-removebg-preview.png -->
+                    <img src="v-removebg-preview.png" alt="Anti Cassinos" onerror="this.style.display='none'; this.parentElement.style.background='#22c55e'; this.parentElement.style.borderRadius='8px';">
+                </div>
                 <span class="brand-name">Anti Cassinos</span>
-            </div>
+            </a>
             <nav class="nav">
                 <a href="#como-funciona">Como funciona</a>
                 <a href="#beneficios">Benefícios</a>
+                <a href="#depoimentos">Depoimentos</a>
                 <a href="#perguntas">FAQ</a>
                 <a href="#assinar" class="btn btn-primary small">Assinar</a>
             </nav>
@@ -623,7 +809,7 @@
                     <p class="support-note">Precisa de ajuda? <a href="#perguntas" style="color:#22c55e;">Veja o FAQ</a></p>
                 </div>
                 <form id="lead-form" class="card form-card">
-                    <h2 style="margin-bottom: 16px; font-size: 1.4rem;">Comece agora</h2>
+                    <h2 style="margin-bottom: 16px; font-size: 1.3rem;">Comece agora</h2>
                     <div id="form-status"></div>
                     <div class="form-row">
                         <label>Nome completo *</label>
@@ -652,10 +838,10 @@
                     </div>
                     <div class="price-box">
                         <span class="price" id="preco-display">R$ 49,90</span>
-                        <span style="font-size:0.8rem;">pagamento único</span>
+                        <span style="font-size:0.75rem;">pagamento único</span>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Continuar para pagamento</button>
-                    <p style="font-size:10px; margin-top:12px; color:#94a3b8;">Ao continuar, você concorda com os Termos e Política de Privacidade.</p>
+                    <p style="font-size:9px; margin-top:12px; color:#94a3b8;">Ao continuar, você concorda com os Termos e Política de Privacidade.</p>
                 </form>
             </div>
         </section>
@@ -675,7 +861,7 @@
             </div>
         </section>
 
-        <section id="pacotes" class="section alt">
+        <section id="beneficios" class="section alt">
             <div class="container">
                 <h2>Escolha seu pacote de proteção</h2>
                 <div class="grid-3">
@@ -721,26 +907,30 @@
             </div>
         </section>
 
+        <!-- SEÇÃO DE DEPOIMENTOS -->
+        <section id="depoimentos" class="section testimonials-section">
+            <div class="container">
+                <h2>Depoimentos de quem já se libertou em São Luís</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">Depois de perder dinheiro e quase minha família, o bloqueio do CPF foi a única saída. Hoje não consigo nem criar conta em cassino. Sou grato!</div><div class="testimonial-author">Carlos M.</div><div class="testimonial-location">São Luís - Cohama</div></div>
+                    <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">Meu irmão estava viciado em bets, o vício destruía ele. Contratei o pacote completo e o bloqueio governamental mudou sua vida.</div><div class="testimonial-author">Fernanda L.</div><div class="testimonial-location">São Luís - Renascença</div></div>
+                    <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">Eu tentava parar sozinho, mas sempre recaía. Com o bloqueio na raiz do CPF não tive mais opção de apostar. Reconstruí minha vida.</div><div class="testimonial-author">João V.</div><div class="testimonial-location">São Luís - Calhau</div></div>
+                    <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">Minha esposa sofreu muito com meu vício. O bloqueio foi a melhor decisão, hoje somos uma família unida novamente.</div><div class="testimonial-author">Rafael S.</div><div class="testimonial-location">São Luís - Anjo da Guarda</div></div>
+                    <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">Indico para todos que sofrem com apostas. O bloqueio é definitivo e o acompanhamento me ajudou a entender os gatilhos. Renasci!</div><div class="testimonial-author">Patrícia K.</div><div class="testimonial-location">São Luís - Turu</div></div>
+                    <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">Tinha vergonha de pedir ajuda, mas o Anti Cassinos me acolheu. A proteção do CPF é realmente eficaz.</div><div class="testimonial-author">Eduardo R.</div><div class="testimonial-location">São Luís - Ponta d'Areia</div></div>
+                    <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">O vício da minha filha estava acabando com a gente. O bloqueio na raiz foi o divisor de águas. Ela voltou a estudar e sorrir.</div><div class="testimonial-author">Marta S.</div><div class="testimonial-location">São Luís - João Paulo</div></div>
+                </div>
+            </div>
+        </section>
+
         <section id="perguntas" class="section">
             <div class="container">
                 <h2>Perguntas frequentes</h2>
                 <div class="faq-grid">
-                    <details class="faq-item">
-                        <summary>O bloqueio governamental é realmente irreversível?</summary>
-                        <p>Sim. O bloqueio é feito na raiz governamental do CPF, tornando impossível qualquer cadastro em plataformas de apostas online. Uma vez implementado, não pode ser desfeito.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Como funciona o bloqueio de anúncios?</summary>
-                        <p>Configuramos filtros nos seus dispositivos para bloquear anúncios de cassinos e casas de apostas, criando um ambiente livre dessas tentações.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>O que inclui o acompanhamento de 1 mês?</summary>
-                        <p>Especialista em vício em apostas, análise matemática dos métodos de vício, livros e materiais para superação, e métodos comprovados para se livrar do vício.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Isso afeta meu CPF em bancos ou crédito?</summary>
-                        <p>Não. O bloqueio se limita apenas a plataformas de jogos e apostas online, não afetando bancos, crédito ou serviços públicos.</p>
-                    </details>
+                    <details class="faq-item"><summary>O bloqueio governamental é realmente irreversível?</summary><p>Sim. O bloqueio é feito na raiz governamental do CPF, tornando impossível qualquer cadastro em plataformas de apostas online. Uma vez implementado, não pode ser desfeito.</p></details>
+                    <details class="faq-item"><summary>Como funciona o bloqueio de anúncios?</summary><p>Configuramos filtros nos seus dispositivos para bloquear anúncios de cassinos e casas de apostas, criando um ambiente livre dessas tentações.</p></details>
+                    <details class="faq-item"><summary>O que inclui o acompanhamento de 1 mês?</summary><p>Especialista em vício em apostas, análise matemática dos métodos de vício, livros e materiais para superação, e métodos comprovados para se livrar do vício.</p></details>
+                    <details class="faq-item"><summary>Isso afeta meu CPF em bancos ou crédito?</summary><p>Não. O bloqueio se limita apenas a plataformas de jogos e apostas online, não afetando bancos, crédito ou serviços públicos.</p></details>
                 </div>
             </div>
         </section>
@@ -749,264 +939,45 @@
             <div class="container cta-inner">
                 <h2>Comece sua proteção hoje</h2>
                 <p>Milhares de pessoas já se protegeram contra cassinos online. Escolha seu pacote e garanta sua tranquilidade.</p>
-                <a href="#form-title" class="btn btn-primary btn-large">Escolher pacote agora</a>
+                <a href="#beneficios" id="cta-pacote-button" class="btn btn-primary btn-large">Escolher pacote agora</a>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p style="color:#94a3b8; font-size:0.8rem;">© 2025 Anti Cassinos - Todos os direitos reservados.</p>
+            <p style="color:#94a3b8; font-size:0.75rem;">© 2025 Anti Cassinos - Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Modal PIX -->
-    <div id="pix-modal" class="modal">
-        <div class="modal-content">
-            <h3>Pagamento via PIX</h3>
-            <div class="qr-container" id="qr-code-container"></div>
-            <div class="pix-code" id="pix-code-text"></div>
-            <button id="copy-pix-btn" class="btn-copy">📋 Copiar código PIX</button>
-            <div class="timer" id="timer">10:00</div>
-            <button id="confirm-payment-btn" class="btn btn-primary btn-block btn-whatsapp">✅ JÁ PAGUEI - CONFIRMAR</button>
-            <button id="close-modal-btn" style="margin-top:12px; background:none; border:none; color:#94a3b8; cursor:pointer;">Fechar</button>
-        </div>
-    </div>
+    <div id="pix-modal" class="modal"><div class="modal-content"><h3>Pagamento via PIX</h3><div class="qr-container" id="qr-code-container"></div><div class="pix-code" id="pix-code-text"></div><button id="copy-pix-btn" class="btn-copy">📋 Copiar código PIX</button><div class="timer" id="timer">10:00</div><button id="confirm-payment-btn" class="btn btn-primary btn-block btn-whatsapp">✅ JÁ PAGUEI - CONFIRMAR</button><button id="close-modal-btn" style="margin-top:12px; background:none; border:none; color:#94a3b8; cursor:pointer;">Fechar</button></div></div>
 
     <script>
-        // ========== CONFIGURAÇÃO FIREBASE ==========
-        const firebaseConfig = {
-            databaseURL: "https://bloqueio-de-cassinos-default-rtdb.asia-southeast1.firebasedatabase.app/"
-        };
-        
+        const firebaseConfig = { databaseURL: "https://bloqueio-de-cassinos-default-rtdb.asia-southeast1.firebasedatabase.app/" };
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
-
-        // ========== CHAVES PIX POR PACOTE ==========
-        const pixKeys = {
-            basico: "00020126330014BR.GOV.BCB.PIX011110107764369520400005303986540549.905802BR5924Ridelvan Gomes Rodrigues6009SAO PAULO62140510rdftUkUQsI63046A5A",
-            intermediario: "00020126330014BR.GOV.BCB.PIX011110107764369520400005303986540579.905802BR5924Ridelvan Gomes Rodrigues6009SAO PAULO621405101f0s3hUFbz63040BED",
-            completo: "00020126330014BR.GOV.BCB.PIX0111101077643695204000053039865406119.905802BR5924Ridelvan Gomes Rodrigues6009SAO PAULO62140510EN2WTK1zkR6304027A"
-        };
-
-        // Elementos
-        const cpfInput = document.getElementById('cpf');
-        const telefoneInput = document.getElementById('telefone');
-        const nomeInput = document.getElementById('nome');
-        const emailInput = document.getElementById('email');
-        const pacoteSelect = document.getElementById('pacote');
-        const precoDisplay = document.getElementById('preco-display');
-        const form = document.getElementById('lead-form');
-        const formStatus = document.getElementById('form-status');
-
-        function updatePrice() {
-            const pacote = pacoteSelect.value;
-            let preco = 'R$ 49,90';
-            if (pacote === 'intermediario') preco = 'R$ 79,90';
-            if (pacote === 'completo') preco = 'R$ 119,90';
-            precoDisplay.textContent = preco;
-        }
-        pacoteSelect.addEventListener('change', updatePrice);
-        updatePrice();
-
-        function formatCPF(value) {
-            const digits = value.replace(/\D/g, '').slice(0,11);
-            if (digits.length <= 3) return digits;
-            if (digits.length <= 6) return `${digits.slice(0,3)}.${digits.slice(3)}`;
-            if (digits.length <= 9) return `${digits.slice(0,3)}.${digits.slice(3,6)}.${digits.slice(6)}`;
-            return `${digits.slice(0,3)}.${digits.slice(3,6)}.${digits.slice(6,9)}-${digits.slice(9,11)}`;
-        }
-        cpfInput.addEventListener('input', (e) => {
-            let val = e.target.value;
-            val = formatCPF(val);
-            e.target.value = val;
-            document.getElementById('cpf-error').innerText = '';
-        });
-
-        function isValidCPF(cpfStr) {
-            const digits = cpfStr.replace(/\D/g, '');
-            if (digits.length !== 11) return false;
-            if (/^(\d)\1{10}$/.test(digits)) return false;
-            let sum = 0;
-            for (let i=0; i<9; i++) sum += parseInt(digits[i]) * (10 - i);
-            let rev = 11 - (sum % 11);
-            if (rev >= 10) rev = 0;
-            if (rev !== parseInt(digits[9])) return false;
-            sum = 0;
-            for (let i=0; i<10; i++) sum += parseInt(digits[i]) * (11 - i);
-            rev = 11 - (sum % 11);
-            if (rev >= 10) rev = 0;
-            return rev === parseInt(digits[10]);
-        }
-
-        function formatPhone(value) {
-            let digits = value.replace(/\D/g, '').slice(0,11);
-            if (digits.length <= 2) return `(${digits}`;
-            if (digits.length <= 7) return `(${digits.slice(0,2)}) ${digits.slice(2)}`;
-            if (digits.length <= 11) return `(${digits.slice(0,2)}) ${digits.slice(2,7)}-${digits.slice(7)}`;
-            return value;
-        }
-        telefoneInput.addEventListener('input', (e) => {
-            e.target.value = formatPhone(e.target.value);
-        });
-
-        const modal = document.getElementById('pix-modal');
-        let timerInterval = null;
-        let currentPixKey = '';
-
+        const pixKeys = { basico: "00020126330014BR.GOV.BCB.PIX011110107764369520400005303986540549.905802BR5924Ridelvan Gomes Rodrigues6009SAO PAULO62140510rdftUkUQsI63046A5A", intermediario: "00020126330014BR.GOV.BCB.PIX011110107764369520400005303986540579.905802BR5924Ridelvan Gomes Rodrigues6009SAO PAULO621405101f0s3hUFbz63040BED", completo: "00020126330014BR.GOV.BCB.PIX0111101077643695204000053039865406119.905802BR5924Ridelvan Gomes Rodrigues6009SAO PAULO62140510EN2WTK1zkR6304027A" };
+        const cpfInput = document.getElementById('cpf'), telefoneInput = document.getElementById('telefone'), nomeInput = document.getElementById('nome'), emailInput = document.getElementById('email'), pacoteSelect = document.getElementById('pacote'), precoDisplay = document.getElementById('preco-display'), form = document.getElementById('lead-form'), formStatus = document.getElementById('form-status');
+        function updatePrice() { const pacote = pacoteSelect.value; let preco = 'R$ 49,90'; if (pacote === 'intermediario') preco = 'R$ 79,90'; if (pacote === 'completo') preco = 'R$ 119,90'; precoDisplay.textContent = preco; }
+        pacoteSelect.addEventListener('change', updatePrice); updatePrice();
+        function formatCPF(value) { const digits = value.replace(/\D/g, '').slice(0,11); if (digits.length <= 3) return digits; if (digits.length <= 6) return `${digits.slice(0,3)}.${digits.slice(3)}`; if (digits.length <= 9) return `${digits.slice(0,3)}.${digits.slice(3,6)}.${digits.slice(6)}`; return `${digits.slice(0,3)}.${digits.slice(3,6)}.${digits.slice(6,9)}-${digits.slice(9,11)}`; }
+        cpfInput.addEventListener('input', (e) => { let val = e.target.value; val = formatCPF(val); e.target.value = val; document.getElementById('cpf-error').innerText = ''; });
+        function isValidCPF(cpfStr) { const digits = cpfStr.replace(/\D/g, ''); if (digits.length !== 11) return false; if (/^(\d)\1{10}$/.test(digits)) return false; let sum = 0; for (let i=0; i<9; i++) sum += parseInt(digits[i]) * (10 - i); let rev = 11 - (sum % 11); if (rev >= 10) rev = 0; if (rev !== parseInt(digits[9])) return false; sum = 0; for (let i=0; i<10; i++) sum += parseInt(digits[i]) * (11 - i); rev = 11 - (sum % 11); if (rev >= 10) rev = 0; return rev === parseInt(digits[10]); }
+        function formatPhone(value) { let digits = value.replace(/\D/g, '').slice(0,11); if (digits.length <= 2) return `(${digits}`; if (digits.length <= 7) return `(${digits.slice(0,2)}) ${digits.slice(2)}`; if (digits.length <= 11) return `(${digits.slice(0,2)}) ${digits.slice(2,7)}-${digits.slice(7)}`; return value; }
+        telefoneInput.addEventListener('input', (e) => { e.target.value = formatPhone(e.target.value); });
+        const modal = document.getElementById('pix-modal'); let timerInterval = null; let currentPixKey = '';
         function stopTimer() { if(timerInterval) clearInterval(timerInterval); }
-        function startTimer(minutes) {
-            let totalSeconds = minutes * 60;
-            const timerEl = document.getElementById('timer');
-            function updateTimerDisplay() {
-                const mins = Math.floor(totalSeconds / 60);
-                const secs = totalSeconds % 60;
-                timerEl.textContent = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
-                if (totalSeconds <= 0) {
-                    stopTimer();
-                    timerEl.textContent = "00:00";
-                    alert("Tempo expirado! Feche o modal e tente novamente.");
-                    modal.style.display = 'none';
-                }
-                totalSeconds--;
-            }
-            updateTimerDisplay();
-            timerInterval = setInterval(() => {
-                if (totalSeconds < 0) stopTimer();
-                else updateTimerDisplay();
-            }, 1000);
-        }
-
-        function showModal(pacoteId) {
-            const pixString = pixKeys[pacoteId];
-            if (!pixString) return;
-            currentPixKey = pixString;
-            document.getElementById('pix-code-text').innerText = pixString;
-            const qrDiv = document.getElementById('qr-code-container');
-            qrDiv.innerHTML = "";
-            try {
-                new QRCode(qrDiv, { text: pixString, width: 180, height: 180 });
-            } catch(e) { 
-                qrDiv.innerHTML = "<p>Código PIX disponível</p>"; 
-            }
-            modal.style.display = 'flex';
-            stopTimer();
-            startTimer(10);
-        }
-
-        document.getElementById('copy-pix-btn').addEventListener('click', () => {
-            navigator.clipboard.writeText(currentPixKey);
-            alert("Código PIX copiado!");
-        });
-        document.getElementById('close-modal-btn').addEventListener('click', () => {
-            modal.style.display = 'none';
-            stopTimer();
-        });
-        document.getElementById('confirm-payment-btn').addEventListener('click', () => {
-            const message = encodeURIComponent("já efetuei o pagamento");
-            window.open(`https://wa.me/5599985324277?text=${message}`, '_blank');
-            modal.style.display = 'none';
-            stopTimer();
-        });
-
-        document.querySelectorAll('.select-package').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const pkg = btn.getAttribute('data-pacote');
-                if (pkg === 'basico') pacoteSelect.value = 'basico';
-                else if (pkg === 'intermediario') pacoteSelect.value = 'intermediario';
-                else if (pkg === 'completo') pacoteSelect.value = 'completo';
-                updatePrice();
-                document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        async function enviarParaFirebase(leadData) {
-            try {
-                const timestamp = Date.now();
-                const firebaseData = {
-                    nome: leadData.nomeCompleto,
-                    cpf: leadData.cpf,
-                    email: leadData.email,
-                    pacote: leadData.pacoteEscolhido,
-                    timestamp: timestamp,
-                    telefone: leadData.telefone,
-                    status: leadData.status,
-                    dataHoraCadastro: leadData.dataHoraCadastro
-                };
-                const leadsRef = database.ref('leads');
-                const newLeadRef = leadsRef.push();
-                await newLeadRef.set(firebaseData);
-                return { success: true, id: newLeadRef.key };
-            } catch (error) {
-                console.error("Erro Firebase:", error);
-                return { success: false, error: error.message };
-            }
-        }
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            formStatus.innerHTML = '';
-            
-            const nome = nomeInput.value.trim();
-            const cpfRaw = cpfInput.value;
-            const email = emailInput.value.trim();
-            const telefoneRaw = telefoneInput.value.trim();
-            const pacote = pacoteSelect.value;
-
-            if (!nome) { formStatus.innerHTML = '<div class="error-message">❌ Nome completo obrigatório</div>'; return; }
-            if (!isValidCPF(cpfRaw)) { document.getElementById('cpf-error').innerHTML = "CPF inválido"; return; }
-            else { document.getElementById('cpf-error').innerHTML = ""; }
-            if (!email || !email.includes('@')) { formStatus.innerHTML = '<div class="error-message">❌ E-mail válido obrigatório</div>'; return; }
-            if (!telefoneRaw || telefoneRaw.replace(/\D/g, '').length < 10) { formStatus.innerHTML = '<div class="error-message">❌ Telefone obrigatório</div>'; return; }
-
-            const cpfDigits = cpfRaw.replace(/\D/g, '');
-            const telefoneDigits = telefoneRaw.replace(/\D/g, '');
-
-            const leadData = {
-                nomeCompleto: nome,
-                cpf: cpfDigits,
-                email: email,
-                telefone: telefoneDigits,
-                pacoteEscolhido: pacote,
-                dataHoraCadastro: new Date().toISOString(),
-                status: "aguardando_pagamento"
-            };
-
-            const submitBtn = document.getElementById('submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Enviando...';
-            submitBtn.disabled = true;
-            
-            try {
-                const result = await enviarParaFirebase(leadData);
-                if (result.success) {
-                    formStatus.innerHTML = '<div class="success-message">✅ Dados salvos!</div>';
-                    let pacoteKey = pacote === 'intermediario' ? 'intermediario' : (pacote === 'completo' ? 'completo' : 'basico');
-                    setTimeout(() => showModal(pacoteKey), 500);
-                } else {
-                    throw new Error(result.error);
-                }
-            } catch (err) {
-                formStatus.innerHTML = `<div class="error-message">❌ Erro ao salvar. Tente novamente.</div>`;
-            } finally {
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
-            }
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === "#") return;
-                const target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+        function startTimer(minutes) { let totalSeconds = minutes * 60; const timerEl = document.getElementById('timer'); function updateTimerDisplay() { const mins = Math.floor(totalSeconds / 60); const secs = totalSeconds % 60; timerEl.textContent = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`; if (totalSeconds <= 0) { stopTimer(); timerEl.textContent = "00:00"; alert("Tempo expirado! Feche o modal e tente novamente."); modal.style.display = 'none'; } totalSeconds--; } updateTimerDisplay(); timerInterval = setInterval(() => { if (totalSeconds < 0) stopTimer(); else updateTimerDisplay(); }, 1000); }
+        function showModal(pacoteId) { const pixString = pixKeys[pacoteId]; if (!pixString) return; currentPixKey = pixString; document.getElementById('pix-code-text').innerText = pixString; const qrDiv = document.getElementById('qr-code-container'); qrDiv.innerHTML = ""; try { new QRCode(qrDiv, { text: pixString, width: 160, height: 160 }); } catch(e) { qrDiv.innerHTML = "<p>Código PIX disponível</p>"; } modal.style.display = 'flex'; stopTimer(); startTimer(10); }
+        document.getElementById('copy-pix-btn').addEventListener('click', () => { navigator.clipboard.writeText(currentPixKey); alert("Código PIX copiado!"); });
+        document.getElementById('close-modal-btn').addEventListener('click', () => { modal.style.display = 'none'; stopTimer(); });
+        document.getElementById('confirm-payment-btn').addEventListener('click', () => { const message = encodeURIComponent("já efetuei o pagamento"); window.open(`https://wa.me/5599985324277?text=${message}`, '_blank'); modal.style.display = 'none'; stopTimer(); });
+        document.querySelectorAll('.select-package').forEach(btn => { btn.addEventListener('click', (e) => { const pkg = btn.getAttribute('data-pacote'); if (pkg === 'basico') pacoteSelect.value = 'basico'; else if (pkg === 'intermediario') pacoteSelect.value = 'intermediario'; else if (pkg === 'completo') pacoteSelect.value = 'completo'; updatePrice(); document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth' }); }); });
+        async function enviarParaFirebase(leadData) { try { const timestamp = Date.now(); const firebaseData = { nome: leadData.nomeCompleto, cpf: leadData.cpf, email: leadData.email, pacote: leadData.pacoteEscolhido, timestamp: timestamp, telefone: leadData.telefone, status: leadData.status, dataHoraCadastro: leadData.dataHoraCadastro }; const leadsRef = database.ref('leads'); const newLeadRef = leadsRef.push(); await newLeadRef.set(firebaseData); return { success: true, id: newLeadRef.key }; } catch (error) { console.error("Erro Firebase:", error); return { success: false, error: error.message }; } }
+        form.addEventListener('submit', async (e) => { e.preventDefault(); formStatus.innerHTML = ''; const nome = nomeInput.value.trim(); const cpfRaw = cpfInput.value; const email = emailInput.value.trim(); const telefoneRaw = telefoneInput.value.trim(); const pacote = pacoteSelect.value; if (!nome) { formStatus.innerHTML = '<div class="error-message">❌ Nome completo obrigatório</div>'; return; } if (!isValidCPF(cpfRaw)) { document.getElementById('cpf-error').innerHTML = "CPF inválido"; return; } else { document.getElementById('cpf-error').innerHTML = ""; } if (!email || !email.includes('@')) { formStatus.innerHTML = '<div class="error-message">❌ E-mail válido obrigatório</div>'; return; } if (!telefoneRaw || telefoneRaw.replace(/\D/g, '').length < 10) { formStatus.innerHTML = '<div class="error-message">❌ Telefone obrigatório</div>'; return; } const cpfDigits = cpfRaw.replace(/\D/g, ''); const telefoneDigits = telefoneRaw.replace(/\D/g, ''); const leadData = { nomeCompleto: nome, cpf: cpfDigits, email: email, telefone: telefoneDigits, pacoteEscolhido: pacote, dataHoraCadastro: new Date().toISOString(), status: "aguardando_pagamento" }; const submitBtn = document.getElementById('submit-btn'); const originalText = submitBtn.innerHTML; submitBtn.innerHTML = 'Enviando...'; submitBtn.disabled = true; try { const result = await enviarParaFirebase(leadData); if (result.success) { formStatus.innerHTML = '<div class="success-message">✅ Dados salvos!</div>'; let pacoteKey = pacote === 'intermediario' ? 'intermediario' : (pacote === 'completo' ? 'completo' : 'basico'); setTimeout(() => showModal(pacoteKey), 500); } else { throw new Error(result.error); } } catch (err) { formStatus.innerHTML = `<div class="error-message">❌ Erro ao salvar. Tente novamente.</div>`; } finally { setTimeout(() => { submitBtn.innerHTML = originalText; submitBtn.disabled = false; }, 2000); } });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const targetId = this.getAttribute('href'); if (targetId === "#") return; const target = document.querySelector(targetId); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+        const ctaBtn = document.getElementById('cta-pacote-button');
+        if(ctaBtn) { ctaBtn.addEventListener('click', function(e) { e.preventDefault(); const pacotesSection = document.getElementById('beneficios'); if(pacotesSection) pacotesSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); }
     </script>
 </body>
 </html>
